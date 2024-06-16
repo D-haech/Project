@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://kit.fontawesome.com/012aae2d8e.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event-App</title>
+    <link rel="stylesheet" href="./dist/css/index.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./Bootstrap 5.3/bootstrap.min.css">
+</head>
+
+<body>
+    <!-- main row -->
+    <div class="row main-row overflow-y-scroll">
+
+        <!-- sidebar Div -->
+        <div class="col-2  sidebar d-none d-md-flex">
+
+            <ul class="p-0 m-0 d-sm-flex d-md-block ">
+                <li class="h6 fw-bold">Osarogie Daniel</li>
+                <li class="nav-item ms-4 mt-5 home-link"><a href="#" class="nav-link ">Home</a></li>
+                <li class="nav-item ms-4 mt-5 budget-link"><a href="#" class="nav-link ">Budget</a></li>
+                <li class="nav-item ms-4 mt-5 vendors-link"><a href="#" class="nav-link">Vendors</a></li>
+                <li class="nav-item ms-4 mt-5 checklist-link"><a href="#" class="nav-link">CheckList</a></li>
+                <li class="nav-item ms-4 mt-5 messages-link"><a href="#" class="nav-link">Messages</a></li>
+
+            </ul>
+            <!-- <div class="svg col-6">
+                    <svg viewBox="0 0 500 200" height="275">
+                        <path d="M 0 50 C 150 150 300 0 500 80 L 500 0 L 0 0" fill="#31525b"></path>
+                    </svg>
+                </div> -->
+
+        </div>
+
+
+
+        <!-- mobile responsiveness for sidebar -->
+        <ul class=" ms-4 nav  d-sm-flex d-md-none mobile-nav ">
+            <li class="nav-item mobile-home-link"><a href="#" class="nav-link  ">Home</a></li>
+            <li class="nav-item mobile-budget-link"><a href="#" class="nav-link ">Budget</a></li>
+            <li class="nav-item"><a href="#" class="nav-link ">Vendors</a></li>
+            <li class="nav-item mobile-checklist-link"><a href="#" class="nav-link ">Checklist</a></li>
+            <li class="nav-item mobile-messages-link"><a href="#" class="nav-link ">Messages</a></li>
+            <li class="h6 fw-bold">Osarogie Daniel</li>
+        </ul>
+
+        <!-- |||||||||||||||||||||||||||||||||||||||||||| -->
+
+
+        <div class="col-8 main page  ">
+            <div class="row gap-3 ms-3 mt-3">
+                <!-- Event card -->
+                <div id="event" class="position-relative col-md-5 rounded lil bg-primary pt-2">
+                    <h4 class="text-center">Event</h4>
+                    <span class="ms-lg-5   text-wrap badge text-bg-primary">Days <br><br> <span
+                            class="days text-white">23 </span></span>
+                    <span class="ms-lg-2  text-wrap badge text-bg-primary">Hours <br><br><span
+                            class="hours text-white">23</span> </span>
+                    <span class="ms-lg-2  text-wrap badge text-bg-primary">Mins <br><br><span
+                            class="mins text-light">23</span> </span>
+                    <span class="ms-lg-2 text-wrap mt-md-2 badge text-bg-primary">Sec <br><br><span
+                            class="sec text-white">23</span> </span>
+                    <div class="row mt-3 ">
+                        <div class="col-5 "><button
+                                class="rounded-pill px-3 border-warning-subtle join-btn">Join</button></div>
+                        <div class="col-5 "><button
+                                class="px-2 ms-5 rounded-pill border-warning-subtle create-btn">Create</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- end of event -->
+
+                <!-- event pop up for Join -->
+                <div class="p-3 join-event start-0-sm rounded-3">
+                    <div class="d-flex">
+                        <button type="button" id="closeEvent" class="btn-close me-5" aria-label="Close"></button>
+                        <h4>Join existing Events</h4>
+                    </div>
+
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Marriage Ceremony</td>
+                                <td class="ps-5"><input type="checkbox" name="" id=""></td>
+                            </tr>
+                            <tr>
+                                <td>Marriage Ceremony</td>
+                                <td class="ps-5"><input type="checkbox" name="" id=""></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <button class="inner-join rounded-pill px-3 mt-2">Join</button>
+
+
+
+                </div>
+                <!-- end of join pop up -->
+
+                <!-- create pop up for Event-->
+                <div class="p-3   create-event z-3 start-0-sm position-absolute rounded-3" novalidate>
+                    <form action="" class="needs-validation">
+                        <div class="d-flex">
+                            <button type="button" id="closeCreateEvent" class="btn-close me-5"
+                                aria-label="Close"></button>
+                            <h4>Create New Event</h4>
+                        </div>
+                        <br>
+                        <input type="text" placeholder="Name" class="form-control" name="" id="budgetName" required><br>
+                        <div class="invalid-feedback">Please fill this part</div>
+                        <input type="datetime-local" placeholder="Note" class="form-control getDate" name="" id="">
+
+
+                        <br>
+                        <input type="number" class="form-control" placeholder="Budget" name="" id="" required>
+                        <br>
+                        <input type="button" value="CREATE" class="create-popup-btn fw-bold form-control">
+                    </form>
+                </div>
+                <!-- Pop-up for event ends here -->
+
+
+
+
+                <!-- vendor -->
+                <div class="col-md-6 rounded lil  vendor">
+                    <div class="text-center fw-bold">VENDORS</div>
+                    <hr>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="rounded-circle  reserved"></div>
+                            </td>
+                            <td>resreved</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="rounded-circle  pending "></div>
+                            </td>
+                            <td>pending</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="rounded-circle  rejected"></div>
+                            </td>
+                            <td>rejected</td>
+                        </tr>
+
+
+                    </table>
+                </div>
+                <!-- end of vendor -->
+            </div>
+
+
+
+            <div class="row ms-3 mt-3 gap-3 ">
+                <!-- Budget begins here -->
+                <div class="col-md-5 lil rounded position-relative budget">
+                    <div class="fw-bold text-uppercase text-center">Budget</div>
+                    <hr>
+                    <table>
+                        <tr>
+                            <td>Amount</td>
+                            <td>
+                                <div class="ms-5 rounded"></div>
+                            </td>
+                            <td>&#8358; 0</td>
+                        </tr>
+                        <tr>
+                            <td>Paid</td>
+                            <td>
+                                <div class="ms-5 rounded"></div>
+                            </td>
+                            <td>&#8358; 0</td>
+                        </tr>
+                        <tr>
+                            <td>Pending</td>
+                            <td>
+                                <div class="ms-5 rounded"></div>
+                            </td>
+                            <td>&#8358; 0</td>
+                        </tr>
+
+                    </table>
+                    <button
+                        class="border-warning-subtle  fw-bold  rounded-pill position-absolute bottom-0 end-0 new-budget">Add
+                        New
+                        Budget
+                    </button>
+                </div>
+                <!-- budget ends here -->
+
+                <!-- Guest  begins here -->
+                <div class="col-md-6 lil rounded  guest">
+                    <div class="text-center text-uppercase fw-bold">guest</div>
+                    <hr>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="accepted rounded-circle"></div>
+                            </td>
+                            <td class="ps-2">0</td>
+                            <td class="ps-2">accepted</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="rounded-circle accepted"></div>
+                            </td>
+                            <td class="ps-2">2</td>
+                            <td class="ps-2">Pending</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="rounded-circle accepted"></div>
+                            </td>
+                            <td class="ps-2">5</td>
+                            <td class="ps-2">Denied</td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- Guest  ends here -->
+            </div>
+
+            <!-- checklist table -->
+            <div class="row gap-3 ms-3 mt-3">
+                <div class="col-md-5 rounded checklist position-relative">
+                    <div class="fw-bold text-center">CHECKLIST</div>
+                    <hr>
+                    <div class="rounded-3 "> Tasks</div>
+                    <div class="">
+                        <table>
+
+                            <tbody id="tbody">
+                                <!-- <tr>
+                                <td class="one">
+                                    <input type="checkbox" name="" id="">
+                                </td>
+                                <td class="two"> one</td>
+                                <td class="three">completed</td>
+                            </tr> -->
+
+
+                            </tbody>
+
+                        </table>
+                    </div>
+                    <button id="taskButton"
+                        class="add-tasks border-warning-subtle position-absolute end-0  rounded-pill fw-bold ">Add
+                        New Task</button>
+                </div>
+
+
+                <!-- New checklist card -->
+                <div class="col-md-6 rounded lil   position-relative" id="calm">
+                    <h4>Advert</h4>
+
+                    <hr>
+
+                </div>
+            </div>
+            <!--  checklist table ends here -->
+
+        </div>
+
+        <!-- budget main row -->
+        <div class=" ms-5 col-8  budget-bar ">
+            <table class="table table-info table-borderless">
+                <thead>
+                    <th>Select</th>
+                    <th>Name</th>
+                    <th> Paid</th>
+                    <th> Pending</th>
+                    <th>Total</th>
+                    <th>Category</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td>Gabriel Emmanuella</td>
+                        <td>&#8358 50,000</td>
+                        <td>&#8358 30,000</td>
+                        <td>&#8358 80,000</td>
+                        <td>Accessories</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td>Gabriel Emmanuella</td>
+                        <td>&#8358 50,000</td>
+                        <td>&#8358 30,000</td>
+                        <td>&#8358 80,000</td>
+                        <td>Accessories</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <button class="btn-sm del-btn rounded-pill bg-info border-info-subtle">Delete</button>
+        </div>
+        <!-- end of budget main row -->
+
+        <!-- checklist main row  -->
+        <div class="ms-5 col-8 checklist-bar ">
+            <table class="table-info table table-striped">
+                <thead>
+                    <th>Name</th>
+                    <th>Note</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mourning</td>
+                        <td>What ever is written on the Note</td>
+                        <td>Music & Show</td>
+                        <td>Completed</td>
+                        <td>24-6-2024</td>
+                    </tr>
+                    <tr>
+                        <td>Mourning</td>
+                        <td>What ever is written on the Note</td>
+                        <td>Music & Show</td>
+                        <td>Completed</td>
+                        <td>24-6-2024</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- end of checklist main row -->
+
+
+        <!-- Messages -->
+        <div class="ms-5 col-8 messages-bar ">
+            <table class="table messages table-hover">
+                <thead>
+                    <tr>
+                        <td>#</td>
+                        <td>Sender</td>
+                        <td>Title</td>
+                        <td>Time</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td><a href="#">Mami water</a></td>
+                        <td>Get ready to recreate</td>
+                        <td>9:45 AM</td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td><a href="#">Mami water</a></td>
+                        <td>Get ready to recreate</td>
+                        <td>9:45 AM</td>
+                    </tr>
+
+                    <tr>
+                        <td><input type="checkbox" name="" id=""></td>
+                        <td><a href="#">Gabriel</a></td>
+                        <td>Landing Jobs</td>
+                        <td>10:45 AM</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <button class="btn " title="Delete"><i class="fa-regular fa-trash-can"></i></button>
+                        </td>
+                        <td> <button class="btn" title="Reply">
+                                <i class="fa-solid fa-reply"></i></button>
+                        </td>
+                        <td>
+                            <button class="btn" title="New Message">
+                                <i class="fa-solid fa-circle-plus"></i>
+                            </button>
+                        </td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <!-- end of messages bar -->
+    </div>
+
+
+
+    <!-- add new budget form -->
+    <div class="p-3 shadow-lg  add-budget z-index-1 start-0-sm position-absolute rounded-3" novalidate>
+        <form action="" class="needs-validation">
+            <div class="d-flex">
+                <button type="button" id="close" class="btn-close me-5" aria-label="Close"></button>
+                <h4>Add New Cost</h4>
+            </div>
+            <br>
+            <input type="text" placeholder="Name" class="form-control" name="" id="budgetName" required><br>
+            <div class="invalid-feedback">Please fill this part</div>
+            <input type="text" placeholder="Note" class="form-control" name="" id=""><br>
+            <select name="" class="form-select" id=""><br>
+                <option value="All">All Categories</option>
+                <option value="Attire">Attire & Accesories</option>
+                <option value="Health">Health & Beauty</option>
+                <option value="Music">Music & Show</option>
+                <option value="Flowers">Flowers & Decor</option>
+                <option value="Photo">Photo & Video</option>
+                <option value="Accesories">Accesories</option>
+                <option value="Reception">Reception</option>
+                <option value="transportation">Transportation</option>
+                <option value="Accomodation">Accomodation</option>
+                <option value="Unassigned">Unassigned Categories</option>
+            </select>
+            <br>
+            <input type="number" class="form-control" placeholder="Amount" name="" id="" required>
+            <br>
+            <input type="button" value="ADD" class="add-btn fw-bold form-control">
+        </form>
+    </div>
+
+    <!-- add new task for checklist  form-->
+    <div class="add-checklist  position-absolute zindex-2  rounded-3">
+
+        <form action="" onsubmit="formLimit()" name="checklist" class="form-control">
+            <div class="d-flex">
+                <button class="btn-close me-5 close-task"></button>
+                <h4>Add New task</h4>
+            </div>
+            <input type="text" class="form-control" placeholder="Name" value="" name="checkName" id="checklistName"
+                required><br>
+            <input type="text" class="form-control" value="" placeholder="Note" name="" id="checklistNote"><br>
+            <select name="" class="form-select" id="" required>
+                <option value="">All Categories</option>
+                <option value="Attire">Attire & Accesories</option>
+                <option value="Health">Health & Beauty</option>
+                <option value="Music">Music & Show</option>
+                <option value="Flowers">Flowers & Decor</option>
+                <option value="Photo">Photo & Video</option>
+                <option value="Accesories">Accesories</option>
+                <option value="Reception">Reception</option>
+                <option value="transportation">Transportation</option>
+                <option value="Accomodation">Accomodation</option>
+                <option value="Unassigned">Unassigned Categories</option>
+            </select><br>
+            <input type="date" value="" class="form-control" name="checkDate" id="checklistDate" required><br>
+            <input type="submit" id="checklistSubmit" value="ADD" class="text-light fw-bold form-control ">
+
+        </form>
+
+    </div>
+
+
+
+
+
+
+
+    <script src="./dist/Javascript/repeat.js"></script>
+    <script src="./Bootstrap 5.3/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

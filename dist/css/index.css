@@ -1,0 +1,334 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+.sign-up .divider::after, .login .divider::after,
+.sign-up .divider::before,
+.login .divider::before {
+  content: "";
+  padding: 1px;
+  background-color: gray;
+  flex: 1;
+  margin: 10px 1px;
+}
+
+.sign-up .or, .login .or {
+  padding: 4px 4px;
+}
+
+.main-row .main #event button {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+* {
+  color: #31525b;
+}
+
+.all-round {
+  background-color: #b3dee5;
+  height: 100vh;
+}
+
+.main-cont {
+  height: 100vh;
+  background-color: #b3dee5;
+}
+.main-cont h2, .main-cont p {
+  margin-left: 10%;
+}
+.main-cont button {
+  background-color: #31525b;
+}
+.main-cont button:hover {
+  background-color: #31525b;
+  color: black;
+}
+.main-cont .picture {
+  margin-left: 25%;
+  width: 50vw;
+  height: 60vh;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation-name: backchange;
+  animation-iteration-count: infinite;
+  animation-timing-function: 5s;
+  animation-duration: 7s;
+}
+@keyframes backchange {
+  0% {
+    background-image: url(/dist/image/pexels-salooart-16408.jpg);
+  }
+  25% {
+    background-image: url(/dist/image/pexels-salooart-16408.jpg);
+  }
+  50% {
+    background-image: url(/dist/image/rexul.jpg);
+  }
+  100% {
+    background-image: url(/dist/image/rexul.jpg);
+  }
+}
+
+.sign-up, .login {
+  display: none;
+  width: 35vw !important;
+  text-align: center;
+  background-color: #fae6b1;
+}
+.sign-up input[type=submit], .login input[type=submit] {
+  background-color: #43707c;
+}
+.sign-up .divider, .login .divider {
+  align-items: center;
+  margin: 15px;
+}
+.login .divider {
+  align-items: center;
+  margin: 15px;
+}
+@media screen and (max-width: 450px) {
+  .sign-up, .login {
+    width: 80% !important;
+  }
+  .new-budget {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1200px) and (min-width: 577px) {
+  .main-bar {
+    min-width: 90%;
+    height: 200vh !important;
+  }
+  .main-bar .row {
+    height: 40vh !important;
+  }
+}
+/*.main {
+  height: 100vh;
+  min-width: fit-content;
+
+  .sidebar {
+    height: 100vh;
+    width: 20vw;
+    background-color: colors(background);
+  }
+  .main-bar {
+    height: 100vh;
+    width: calc(65vw + 8px);
+    background-color: lighten(colors(color1), 10%);
+    .row {
+      height: 30vh;
+      @extend %font;
+
+      .event {
+        background-image: gradient(colors(background), colors(color2), 50%);
+      }
+      button {
+        background-color: colors(buttons);
+        @extend %font;
+        margin: 6rem 0 0 5rem;
+      }
+      .guest{
+        background-image: gradient(colors(background), colors(color1), 15%);
+      }
+    }
+  }
+}*/
+.main-row {
+  background-color: white;
+}
+.main-row .sidebar {
+  background-color: #b3dee5;
+  height: 100vh;
+}
+.main-row .main {
+  height: 100vh;
+}
+.main-row .main .lil {
+  height: 30vh;
+}
+.main-row .main #event {
+  position: relative;
+  box-shadow: 10px 5px 8px #43707c;
+  background-image: linear-gradient(to bottom, #b3dee5 0%, #b3dee5 53%, #31525b 53%, #31525b 100%);
+}
+.main-row .main #event span {
+  font-size: 14px;
+}
+.main-row .main #event .row {
+  background-color: #31525b;
+}
+.main-row .main #event button {
+  background-color: #ffa101;
+}
+.main-row .nav-item {
+  margin-right: 3rem;
+  list-style-type: none;
+}
+.main-row .nav-item:hover {
+  background-color: #31525b;
+  padding: 4px 5px;
+  color: #fae6b1;
+}
+
+.mobile-nav a {
+  color: #31525b;
+}
+.mobile-nav a:hover {
+  color: white;
+}
+
+.vendor {
+  background-color: #fae6b1;
+  box-shadow: 10px 5px 8px #43707c;
+}
+.vendor .reserved {
+  height: 10px;
+  width: 10px;
+  background-color: #ff4d4d;
+}
+.vendor .pending {
+  height: 10px;
+  width: 10px;
+  background-color: #ffa101;
+}
+.vendor .rejected {
+  height: 10px;
+  width: 10px;
+  background-color: #31525b;
+}
+
+.budget, #calm, .checklist, .guest {
+  background-color: #fae6b1;
+  box-shadow: 10px 5px 8px #43707c;
+}
+.budget button, #calm button, .checklist button, .guest button {
+  width: 9rem;
+  background-color: #ffa101;
+}
+
+.guest .accepted {
+  height: 10px;
+  width: 10px;
+  background-color: #ff4d4d;
+}
+
+.svg {
+  transform: rotate(90deg);
+  position: absolute;
+  top: 20%;
+  left: -15%;
+}
+
+.add-budget {
+  width: 28rem;
+  margin: 0px auto;
+  top: 15%;
+  left: 35%;
+  background-color: #b3dee5;
+  display: none;
+}
+.add-budget .add-btn {
+  background-color: #ffa101;
+}
+.add-budget .add-btn:focus {
+  background-color: #ffa101;
+}
+@media screen and (max-width: 576px) {
+  .add-budget {
+    top: 13%;
+    left: 5%;
+    width: 80%;
+  }
+}
+
+.checklist {
+  position: relative;
+}
+.checklist button {
+  background-color: #ffa101;
+  color: #31525b;
+  position: absolute;
+  bottom: 0%;
+}
+
+.add-checklist, .create-event, .join-event {
+  top: 20%;
+  left: 30%;
+  display: none;
+  width: 40vw;
+  background-color: #b3dee5;
+}
+.add-checklist form, .create-event form, .join-event form {
+  background-color: #b3dee5;
+}
+@media screen and (max-width: 764px) {
+  .add-checklist, .create-event, .join-event {
+    top: 40%;
+    left: 1%;
+    width: 70vw;
+  }
+}
+
+#checklistSubmit {
+  background-color: #ffa101;
+}
+
+.budget-bar {
+  height: 70vh;
+  display: none;
+}
+.budget-bar table {
+  width: 60vw;
+}
+@media screen and (max-width: 759px) {
+  .budget-bar table th:nth-last-child(2), .budget-bar table th:nth-last-child(3) {
+    display: none;
+  }
+  .budget-bar table td:nth-last-child(2), .budget-bar table td:nth-last-child(3) {
+    display: none;
+  }
+}
+
+.join-event {
+  position: absolute;
+  z-index: 4;
+  width: 40vw !important;
+}
+@media screen and (max-width: 759px) {
+  .join-event {
+    width: 70% !important;
+  }
+}
+.join-event .add-btn {
+  background-color: #ffa101;
+}
+.join-event .add-btn:focus {
+  background-color: #ffa101;
+}
+.join-event .inner-join {
+  background-color: #ffa101;
+}
+
+.create-event {
+  width: 40vw !important;
+}
+@media screen and (max-width: 759px) {
+  .create-event {
+    width: 70% !important;
+  }
+}
+.create-event .create-popup-btn {
+  background-color: #ffa101;
+}
+.create-event .create-popup-btn:focus {
+  background-color: #ffa101;
+}
+
+.checklist-bar {
+  height: 100vh;
+  display: none;
+}
+
+.messages-bar {
+  display: none;
+}/*# sourceMappingURL=index.css.map */

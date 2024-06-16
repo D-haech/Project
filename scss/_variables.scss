@@ -1,0 +1,46 @@
+$colour: (
+  "background": #b3dee5,
+  "buttons": #ffa101,
+  "color1": #fae6b1,
+  "color2": #31525b,
+);
+//Function to get colors
+@function colors($hue) {
+  @return map-get($colour, $hue);
+}
+
+%divide-after {
+  content: "";
+  padding: 1px;
+  background-color: gray;
+  flex: 1;
+  margin: 10px 1px;
+}
+@mixin main-divide {
+  align-items: center;
+  margin: 15px;
+}
+
+%or {
+  padding: 4px 4px;
+}
+%font {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+@mixin point($color) {
+  height: 10px;
+  width: 10px;
+  background-color: $color;
+}
+
+@function gradient($color1, $color2, $to) {
+  @return linear-gradient(
+    to bottom,
+    $color1 0%,
+    $color1 $to,
+    $color2 $to,
+    $color2 100%
+  );
+}

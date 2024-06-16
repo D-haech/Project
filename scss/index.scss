@@ -1,0 +1,376 @@
+@import "./variables";
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"); //Variables and mixings
+
+//Main code starts here
+
+* {
+  color: colors(color2);
+}
+.all-round {
+  background-color: colors(background);
+  height: 100vh;
+}
+
+.main-cont {
+  height: 100vh;
+  background-color: colors(background);
+  h2 {
+    margin-left: 10%;
+  }
+  p {
+    @extend h2;
+  }
+  button {
+    background-color: colors(color2);
+    &:hover {
+      background-color: colors(color2);
+      color: black;
+    }
+  }
+
+  .picture {
+    margin-left: 25%;
+    width: 50vw;
+    height: 60vh;
+    background: {
+      position: center center;
+      repeat: no-repeat;
+      size: cover;
+    }
+    animation-name: backchange;
+    animation-iteration-count: infinite;
+    animation-timing-function: 5s;
+    animation-duration: 7s;
+  }
+
+  @keyframes backchange {
+    0% {
+      background-image: url(/dist/image/pexels-salooart-16408.jpg);
+    }
+    25% {
+      background-image: url(/dist/image/pexels-salooart-16408.jpg);
+    }
+    50% {
+      background-image: url(/dist/image/rexul.jpg);
+    }
+    100% {
+      background-image: url(/dist/image/rexul.jpg);
+    }
+  }
+}
+
+.sign-up {
+  display: none;
+  width: 35vw !important;
+  text-align: center;
+  background-color: colors(color1);
+  input[type="submit"] {
+    background-color: lighten(colors(color2), 10%);
+  }
+
+  .divider {
+    @include main-divide();
+  }
+
+  .divider::after,
+  .divider::before {
+    @extend %divide-after;
+  }
+
+  .or {
+    @extend %or;
+  }
+}
+
+.login {
+  @extend .sign-up;
+  .divider {
+    @include main-divide;
+  }
+  .divider::before,
+  .divider::after {
+    @extend %divide-after;
+  }
+  .or {
+    @extend %or;
+  }
+}
+
+//Mobile responsiveness for phones
+@media screen and (max-width: 450px) {
+  .sign-up {
+    width: 80% !important;
+  }
+  .new-budget {
+    font-size: 12px;
+  }
+ 
+}
+
+// Mobile responsiveness for md
+@media (max-width: 1200px) and (min-width: 577px) {
+  .main-bar {
+    min-width: 90%;
+    height: 200vh !important;
+    .row {
+      height: 40vh !important;
+    }
+  }
+}
+// end responsiveness
+//|||||||||||||||||||||||
+//|||||||||||||||||||||||
+//Home page starts here
+
+/*.main {
+  height: 100vh;
+  min-width: fit-content;
+
+  .sidebar {
+    height: 100vh;
+    width: 20vw;
+    background-color: colors(background);
+  }
+  .main-bar {
+    height: 100vh;
+    width: calc(65vw + 8px);
+    background-color: lighten(colors(color1), 10%);
+    .row {
+      height: 30vh;
+      @extend %font;
+
+      .event {
+        background-image: gradient(colors(background), colors(color2), 50%);
+      }
+      button {
+        background-color: colors(buttons);
+        @extend %font;
+        margin: 6rem 0 0 5rem;
+      }
+      .guest{
+        background-image: gradient(colors(background), colors(color1), 15%);
+      }
+    }
+  }
+}*/
+
+.main-row {
+  // height: 100vh;
+  background-color: lighten(colors(color1), 20%);
+  .sidebar {
+    background-color: colors(background);
+    height: 100vh;
+    @media screen and (max-width:992px) {
+     
+    }
+  }
+  .main {
+    height: 100vh;
+    .lil {
+      height: 30vh;
+    }
+    #event {
+      position: relative;
+      box-shadow: 10px 5px 8px lighten(colors(color2), 10%);
+      background-image: gradient(colors(background), colors(color2), 53%);
+      span {
+        font-size: 14px;
+      }
+
+      .row {
+        background-color: colors(color2);
+      }
+
+      button {
+        background-color: colors(buttons);
+        @extend %font;
+        // margin: 2rem 0 0 5rem;
+        // position: absolute;
+        // bottom: 1rem;
+        // left: 2rem;
+      }
+    }
+  }
+
+  .nav-item {
+    margin-right: 3rem;
+    list-style-type: none;
+    &:hover {
+      background-color: colors(color2);
+      padding: 4px 5px;
+      color: colors(color1);
+    }
+  }
+}
+
+.mobile-nav {
+  a{
+    color: colors(color2);
+  }
+  a:hover {
+    color: white;
+    
+  }
+}
+
+.vendor {
+  background-color: colors(color1);
+  box-shadow: 10px 5px 8px lighten(colors(color2), 10%);
+  .reserved {
+    @include point(lighten(red, 15%));
+  }
+  .pending {
+    @include point(colors(buttons));
+  }
+  .rejected {
+    @include point(colors(color2));
+  }
+}
+.budget {
+  background-color: colors(color1);
+  box-shadow: 10px 5px 8px lighten(colors(color2), 10%);
+  button {
+    width: 9rem;
+    background-color: colors(buttons);
+  }
+}
+
+.guest {
+  @extend .budget;
+  .accepted {
+    @include point(lighten(red, 15%));
+  }
+}
+.svg {
+  transform: rotate(90deg);
+  position: absolute;
+  top: 20%;
+  left: -15%;
+}
+
+.add-budget {
+  width: 28rem;
+  margin: 0px auto;
+  top: 15%;
+  left: 35%;
+  background-color: colors(background);
+  display: none;
+  .add-btn {
+    background-color: colors(buttons);
+    &:focus {
+      background-color: colors(buttons);
+    }
+  }
+  @media screen and (max-width: 576px) {
+      top: 13%;
+      left: 5%;
+      width: 80%;
+  }
+}
+
+
+
+.checklist {
+  @extend .budget;
+  position: relative;
+  // td div {
+  //   @include point(red);
+  // }
+  button {
+    background-color: colors(buttons);
+    color: colors(color2);
+    position: absolute;
+    bottom: 0%;
+  }
+}
+
+.add-checklist {
+  top: 20%;
+  left: 30%;
+  display: none;
+  width: 40vw;
+  //max-width: calc(40vw);
+  background-color: colors(background);
+  form {
+    background-color: colors(background);
+  }
+  @media screen and (max-width: 764px) {
+    top: 40%;
+    left: 1%;
+    width: 70vw;
+  }
+}
+
+#calm {
+  @extend .budget;
+}
+
+#checklistSubmit {
+  background-color: colors(buttons);
+}
+
+//budget bar
+.budget-bar {
+  height: 70vh;
+  display: none;
+  //background-color: colors(color1);
+  table {
+    width: 60vw;
+    //background-color: red;
+    // border: 2px solid black;
+    @media screen and (max-width:759px) {
+      th:nth-last-child(2), th:nth-last-child(3){
+        display: none;
+      }
+      td:nth-last-child(2), td:nth-last-child(3){
+        display: none;
+      }
+     }
+  }
+
+   
+}
+
+.join-event{
+  @extend .add-checklist;
+ position: absolute;
+ z-index: 4;
+ width:40vw!important;
+ @media screen and (max-width:759px){
+  width: 70%!important;
+ }
+ .add-btn{
+  background-color: colors(buttons);
+  &:focus{
+    background-color: colors(buttons);
+  }
+ }
+ .inner-join{
+  background-color: colors(buttons);
+ }
+}
+
+.create-event{
+  @extend .add-checklist;
+  width:40vw!important;
+  @media screen and (max-width:759px) {
+    width: 70%!important;
+  }
+  .create-popup-btn{
+    background-color: colors(buttons);
+    &:focus{
+      background-color: colors(buttons);
+    }
+   }
+}
+
+// Checklist main row
+.checklist-bar{
+  height: 100vh;
+ display: none;
+}
+
+.messages-bar{
+  display:none;
+}
+
