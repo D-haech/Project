@@ -29,7 +29,10 @@ aLogin.forEach((e) => {
   });
 });
 
-
+const clickin = () => {
+  window.location.replace('repeat.html');
+  console.log('see me');
+}
 
 
 
